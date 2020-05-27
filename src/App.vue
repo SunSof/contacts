@@ -1,16 +1,15 @@
 <template>
-  <simple-list></simple-list>
+<card-list></card-list>
 </template>
 
 <script>
-import SimpleList from "@/components/SimpleList";
+import CardList from '@/components/CardList'
 
 export default {
   components: {
-    SimpleList
+    CardList
   }
-};
+}
 </script>
 
-<style>
-</style>
+<style></style>

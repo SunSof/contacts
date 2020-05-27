@@ -4,7 +4,7 @@ module.exports = function() {
   let _ = require("lodash")
 
   return {
-    users: _.times(100, function(n){
+    users: _.times(32, function(n){
       return {
         id: n + 1,
         name: faker.name.findName(),
@@ -14,3 +14,4 @@ module.exports = function() {
     })
   }
 }
+

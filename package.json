@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "json-server ./db/users.json & vue-cli-service serve",
-    "generate": "json-server ./db/generate.js",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "generate": "json-server ./db/generate.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -27,6 +27,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "vue-cli-plugin-tailwind": "~1.4.1",
     "vue-template-compiler": "^2.6.11"
   }
 }
