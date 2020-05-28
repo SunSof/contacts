@@ -1,5 +1,6 @@
 <template>
 <card-list></card-list>
+
 </template>
 
 <script>
