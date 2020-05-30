@@ -62,7 +62,7 @@ export default {
     card
   },
   created () {
-    fetch('http://localhost:3000/users')
+    fetch('http://localhost:3000/contacts')
       .then(response => {
         return response.json()
       })

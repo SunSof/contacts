@@ -1,14 +1,12 @@
 <template>
-<card-list></card-list>
-
+  <router-view></router-view>
 </template>
 
 <script>
-import CardList from '@/components/CardList'
-
+// import CardList from '@/components/CardList'
+// import login from '@/components/login'
 export default {
   components: {
-    CardList
   }
 }
 </script>
