@@ -17,7 +17,7 @@ function isAuthenticated ({ login, password }) {
 
 function encode (obj) {
   const str = JSON.stringify(obj)
-  let buff = new Buffer(str)
+  var buff = new Buffer(str)
   return buff.toString('base64')
 }
 
@@ -28,9 +28,9 @@ server.post('/login', (req, res) => {
   const { login, password } = req.body
   if (isAuthenticated({ login, password }) === false) {
     const status = 401
-    const message = 'Incorrect login or password';
+    const message = 'Incorrect login or password'
     res.status(status).json({ status, message })
-    return;
+    return
   }
   res.header('Access-Control-Expose-Headers', 'Token')
   res.header('Token', encode({ login, password }))

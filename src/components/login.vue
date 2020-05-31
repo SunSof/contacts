@@ -1,7 +1,7 @@
 <template>
   <div class="container b-card-login">
     <h2 class="b-card-login__h2">Login</h2>
-    <h4 class="b-card-login__h4">Username</h4>
+    <h4 class="b-card-login__h4">Email</h4>
     <input
       type="text"
       name="title"
@@ -18,7 +18,13 @@
       v-model="password"
       placeholder="Password"
     />
-    <button class="login-button btn" @click="submitLogin">Login</button>
+    <div v-if="errorVisible">
+      <h3 class="b-card-error">Please fill the form correctly</h3>
+    </div>
+
+    <button class="login-button btn" @click="submitLogin">
+      Login
+    </button>
   </div>
 </template>
 
@@ -28,7 +34,8 @@ export default {
   data () {
     return {
       login: null,
-      password: null
+      password: null,
+      errorVisible: false
     }
   },
   methods: {
@@ -44,6 +51,11 @@ export default {
           vm.$router.push('/')
         })
         .catch(function (error) {
+          if (vm.password === '') {
+            vm.errorVisible = true
+          } else {
+            vm.errorVisible = false
+          }
           console.log(error)
         })
     }
@@ -67,5 +79,10 @@ export default {
 }
 .login-button {
   background-color: rgb(122, 206, 236);
+}
+.b-card-error {
+  background-color: rgb(248, 131, 77);
+  padding: 10px;
+  width: 230px;
 }
 </style>
